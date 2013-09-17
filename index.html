@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="global.css" />
+		<script type="text/javascript" src="base.js"></script>
+		<!-- Sorting algorithms in approximate order of speed -->
+		<script type="text/javascript" src="bogosort.js"></script>
+		<script type="text/javascript" src="bubblesort.js"></script>
+		<script type="text/javascript" src="smartbubble.js"></script>
+		<script type="text/javascript" src="pingpong.js"></script>
+		<script type="text/javascript" src="selectionsort.js"></script>
+		<script type="text/javascript" src="insertionsort.js"></script>
+		<script type="text/javascript" src="mergesort.js"></script>
+		<script type="text/javascript" src="radixsort.js"></script>
+	</head>
+	<body onLoad="listAlgs()">
+		<div id="content">
+			<h1>Sorting Algorithm Demos</h1>
+			<div id="data"></div>
+			<div id="message"><p class="success">Ready.</p></div>
+			<form id="parameters" action="javascript:generateData()">
+				<p>
+					<label for="algorithm">Algorithm</label>
+					<select id="algorithm">
+						<option value="bogosort">Bogosort</option>
+					</select>
+				</p>
+				<p>
+					<label for="tickperiod">Tick Period (ms)</label>
+					<input type="text" id="tickperiod" value="50" />
+				</p>
+				<p>
+					<label for="pointcount">Number of Values to Sort</label>
+					<input type="text" id="pointcount" value="10" />
+				</p>
+				<p>
+					<input type="submit" value="Randomize Values" />
+					<input type="button" value="Re-sort Values" onClick="resort()" />
+					<input type="button" onClick="halt()" value="Stop Sorting" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>
+

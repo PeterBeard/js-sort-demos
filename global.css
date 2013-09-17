@@ -1,0 +1,56 @@
+@import url(reset.css);
+
+body {
+	font: 20px/28px Helvetica, Arial, sans-serif;
+}
+
+#data {
+	border-bottom: 3px solid #333;
+	height: 400px;
+	margin-bottom: 20px;
+	padding-bottom: 17px;
+	width: 960px;
+}
+
+.bar {
+	background: #17a none;
+	color: #fff;
+	float: left;
+	font: 15px/15px Helvetica, Arial, sans-serif;
+	margin: 0 1px;
+	padding: 7px 0 10px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+
+.selected_a {
+	background: #c33 none;
+}
+
+.selected_b {
+	background: #3c3 none;
+}
+
+#content {
+	margin: 0 auto;
+	width: 960px;
+}
+
+#message p {
+	box-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding: 10px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+#message .success {
+	background: #3c3 none;
+	color: #fff;
+}
+
+#message .busy {
+	background: #ee3 none;
+	color: #000;
+}
