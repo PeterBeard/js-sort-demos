@@ -4,14 +4,17 @@ function pingpongsort(values, tickperiod)
 	var n_values = values.length;
 	var i = 0;
 	var direction = 1;
-	var lb_temp = -1;
-	var up_temp = n_values;
+	var lb_temp = 1;
+	var ub_temp = n_values;
 	var lower_bound = -1;
 	var upper_bound = n_values;
-	// Shuffle the array until it's sorted
+	var swaps = true;
+	var completed_pass = false;
+	// Sort the array
 	I = setInterval(function() {
-	if(!isSorted(values) && !halt_flag)
+	if(!(!swaps && completed_pass) && !halt_flag)
 	{
+		completed_pass = false;
 		iterations++;
 		i += direction;
 		// Switch directions at either end of the array
@@ -20,16 +23,19 @@ function pingpongsort(values, tickperiod)
 			direction *= -1;
 			if(direction == -1)
 			{
-				i = ub_temp-1;
+				i = ub_temp;
 				upper_bound = ub_temp;
+				completed_pass = true;
 			} else {
-				i = lb_temp+1;
+				i = lb_temp;
 				lower_bound = lb_temp;
+				swaps = false;
 			}
 		}
 		// Swap the values if they're in the wrong order
 		if(values[i] > values[i+1])
 		{
+			swaps = true;
 			temp = values[i+1];
 			values[i+1] = values[i];
 			values[i] = temp;

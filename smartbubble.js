@@ -7,7 +7,7 @@ function smartbubble(values, tickperiod)
 	var last_swap = n_values-1;
 	// Shuffle the array until it's sorted
 	I = setInterval(function() {
-	if(!isSorted(values) && !halt_flag)
+	if(imax > 1 && !halt_flag)
 	{
 		iterations++;
 		i++;
@@ -15,6 +15,7 @@ function smartbubble(values, tickperiod)
 		{
 			// Everything after the last swap is already sorted so we can skip it from now on
 			imax = last_swap;
+			last_swap = 0;
 			i = 0;
 		}
 		// Swap values in the wrong order
